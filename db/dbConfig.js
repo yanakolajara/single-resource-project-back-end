@@ -11,4 +11,14 @@ const cn = {
 
 const db = pgp(cn);
 
+db.connect()
+    .then(obj => {
+        console.log("Postgres connection established");
+        obj.done()
+    })
+    .catch((e) => {
+        console.log("Error:", e.message || e);
+    })
+
+
 module.exports = db;
