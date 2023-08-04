@@ -1,6 +1,6 @@
 # Recipe App
 
-Welcome to the Recipe App! This web application allows users to view a list of recipes on the homepage, click on a specific recipe to view its details, add reviews, and rate the recipes. Users who are logged in can also add new recipes, update, and delete existing recipes and reviews.
+Welcome to the Recipe App! This web application allows users to view a list of recipes on the homepage, click on a specific recipe to view its details, add reviews, and rate the recipes. Users can also add new reviews, update, and delete existing reviews.
 
 ## Collaborators
 
@@ -14,7 +14,6 @@ Welcome to the Recipe App! This web application allows users to view a list of r
 - Display a list of recipes on the homepage
 - View a single recipe with ingredients, description, and nutrition facts
 - Add reviews and rate recipes
-- User authentication and authorization for adding, updating, and deleting recipes and reviews
 - Search functionality to find specific recipes
 
 ## Technologies Used
