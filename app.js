@@ -1,11 +1,15 @@
 const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
+
 const app = express();
+const recipes = require('./controllers/recipesController')
 
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
+app.use('/recipes', recipes)
+
 
 app.get('/', (req, res) => {
   res.send('Hello, world!');
