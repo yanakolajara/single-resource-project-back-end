@@ -29,5 +29,5 @@ Welcome to the Recipe App! This web application allows users to view a list of r
 
 
 - [ERD](#erd)
-- [Homepage Wireframe](src/wireframes/homepage.png)
-- [Single Recipe Wireframe](src/wireframes/single-recipe.png)
+- [Homepage Wireframe](erd-wireframes/homepage.png)
+- [Single Recipe Wireframe](erd-wireframes/single-recipe.png)
