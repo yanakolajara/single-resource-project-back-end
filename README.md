@@ -1,6 +1,6 @@
 # Recipe App
 
-Welcome to the Recipe App! This web application allows users to view a list of recipes on the homepage, click on a specific recipe to view its details, add reviews, and rate the recipes. Users can also add new reviews, update, and delete existing reviews.
+Welcome to the Recipe App! This web application allows users to view a list of recipes on the homepage, click on a specific recipe to view its details, add reviews, and rate the recipes. Users can also add new reviews, and update, and delete existing reviews.
 
 ## Collaborators
 
@@ -30,3 +30,6 @@ Welcome to the Recipe App! This web application allows users to view a list of r
 - [ERD](#erd)
 - [Homepage Wireframe](erd-wireframes/homepage.png)
 - [Single Recipe Wireframe](erd-wireframes/single-recipe.png)
+- [Single Recipe Review Wireframe](erd-wireframes/single-review.png)
+- [Contacts Wireframe](erd-wireframes/contact.png)
+- [Edit Recipe Form Wireframe](erd-wireframes/edit-form.png)
