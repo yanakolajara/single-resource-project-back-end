@@ -3,7 +3,8 @@ const router = express.Router()
 
 const {
     getAllRecipes,
-    getRecipeById
+    getRecipeById,
+    createNewRecipe
 } = require('../queries/recipes')
 
 router.get('/', async(req,res) => {
@@ -27,6 +28,16 @@ router.get('/:id', async(req,res) => {
         }else{
             res.status(404).json({error: "Not found"});
         }
+    } catch (error) {
+        res.status(500).json({error: error});
+    }
+})
+
+router.post('/', async(req,res) => {
+    const recipeObject = req.body;
+    try {
+        const newRecipe = await createNewRecipe(recipeObject.name, recipeObject.photo, recipeObject.type, recipeObject.cuisine, recipeObject.is_healthy, recipeObject.is_vegan, recipeObject.difficulty, recipeObject.ingredient, recipeObject.description, recipeObject.cookingtime);
+        res.json(newRecipe)
     } catch (error) {
         res.status(500).json({error: error});
     }
