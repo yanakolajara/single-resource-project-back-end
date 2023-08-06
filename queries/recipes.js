@@ -18,10 +18,10 @@ const getRecipeById = async(id) => {
     }
 }
 
-const createNewRecipe = async(name,photo,type,is_healthy,is_vegan,difficulty,ingredient,description,cookingtime) => {
+const createNewRecipe = async(name,photo,type,cuisine,is_healthy,is_vegan,difficulty,ingredient,description,cookingtime) => {
     try {
-        const newRecipe = await db.any('INSERT INTO recipes (name, photo, type, cuisine,  is_vegan, difficulty, ingredients, description) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9) RETURNING *',
-        [name,photo,type,is_healthy,is_vegan,difficulty,ingredient,description,cookingtime]
+        const newRecipe = await db.any('INSERT INTO recipes (name,photo,type,cuisine,is_healthy,is_vegan,difficulty,ingredient,description,cookingtime) VALUES ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10) RETURNING *',
+        [name,photo,type,cuisine,is_healthy,is_vegan,difficulty,ingredient,description,cookingtime]
         );
         return newRecipe;
     } catch (error) {
