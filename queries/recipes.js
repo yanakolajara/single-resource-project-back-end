@@ -31,5 +31,6 @@ const createNewRecipe = async(name,photo,type,is_healthy,is_vegan,difficulty,ing
 
 module.exports = {
     getAllRecipes,
-    getRecipeById
+    getRecipeById,
+    createNewRecipe
 }
