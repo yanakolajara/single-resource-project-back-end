@@ -29,8 +29,20 @@ const createNewRecipe = async(name,photo,type,cuisine,is_healthy,is_vegan,diffic
     }
 }
 
+const updateRecipe = async(name,photo,type,cuisine,is_healthy,is_vegan,difficulty,ingredient,description,cookingtime,id) => {
+    try {
+        const updatedRecipe = await db.any('UPDATE recipes SET name = $1, photo = $2, type = $3, cuisine = $4, is_healthy = $5, is_vegan = $6, difficulty = $7, ingredient = $8, description = $9, cookingtime = $10 WHERE id = $11 RETURNING *',
+        [name,photo,type,cuisine,is_healthy,is_vegan,difficulty,ingredient,description,cookingtime,id]
+        );
+        return updatedRecipe;
+    } catch (error) {
+        return error;
+    }
+}
+
 module.exports = {
     getAllRecipes,
     getRecipeById,
-    createNewRecipe
+    createNewRecipe,
+    updateRecipe
 }
