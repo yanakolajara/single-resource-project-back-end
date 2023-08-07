@@ -14,7 +14,7 @@ cuisine VARCHAR(50),
 is_vegan BOOLEAN,
 difficulty VARCHAR(50),
 ingredients TEXT NOT NULL,
-description TEXT
+description TEXT,
 calories NUMERIC,
 fat VARCHAR(50),
 carbohydrates VARCHAR(50),
