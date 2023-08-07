@@ -14,6 +14,12 @@ is_vegan BOOLEAN,
 difficulty VARCHAR(50),
 ingredients TEXT NOT NULL,
 description TEXT
+calories NUMERIC,
+fat VARCHAR(50),
+carbohydrates VARCHAR(50),
+protein VARCHAR(50),
+sugar VARCHAR(50),
+
 );
 
 DROP TABLE IF EXISTS reviews;
@@ -30,18 +36,7 @@ CREATE TABLE reviews (
 );
 
 
-DROP TABLE IF EXISTS nutrition;
 
-CREATE TABLE nutrition(
-    id SERIAL PRIMARY KEY,
-    calories NUMERIC,
-    fat NUMERIC,
-    carbohydrates NUMERIC,
-    protein NUMERIC,
-    sugar NUMERIC,
-    recipes_id INTEGER REFERENCES recipes (id)
-    ON DELETE CASCADE
-);
 
 
 

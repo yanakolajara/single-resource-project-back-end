@@ -5,6 +5,7 @@ const cors = require('cors');
 const app = express();
 const recipes = require('./controllers/recipesController')
 
+
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
