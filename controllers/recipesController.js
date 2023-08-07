@@ -4,7 +4,8 @@ const router = express.Router()
 const {
     getAllRecipes,
     getRecipeById,
-    createNewRecipe
+    createNewRecipe,
+    updateRecipe
 } = require('../queries/recipes')
 
 router.get('/', async(req,res) => {
@@ -40,6 +41,20 @@ router.post('/', async(req,res) => {
         res.json(newRecipe)
     } catch (error) {
         res.status(500).json({error: error});
+    }
+})
+
+router.put('/:id', async(req,res) => {
+    const recipeObject = req.body;
+    try {
+        const updatedRecipe = await updateRecipe(recipeObject.name, recipeObject.photo, recipeObject.type, recipeObject.cuisine, recipeObject.is_healthy, recipeObject.is_vegan, recipeObject.difficulty, recipeObject.ingredient, recipeObject.description, recipeObject.cookingtime, req.params.id);
+        if(updatedRecipe.length !== 0){
+            res.json(updatedRecipe)
+        }else{
+            res.send(404).json({error: 'Recipe not found'})
+        }
+    } catch (error) {
+        res.status(500).json({error: error})
     }
 })
 
