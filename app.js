@@ -10,8 +10,10 @@ const reviews = require('./controllers/reviewsController')
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
+
 app.use('/recipes', recipes)
 app.use('/reviews', reviews)
+recipes.use('/:recipeId/reviews', reviews)
 
 
 app.get('/', (req, res) => {
