@@ -3,7 +3,7 @@
 INSERT INTO 
 recipes(name, photo, type, cuisine,  is_vegan, difficulty, ingredients, description)
 VALUES
-('Peanut butter & jelly sandwich','https://unsplash.com/photos/1i1zPbkQJNg','Snack', 'American', TRUE, 'easy','peanut butter, jelly, bread', 'americas favorite snack'),
+('Peanut butter & jelly sandwich','https://images.unsplash.com/photo-1557275357-072087771588?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80','Snack', 'American', TRUE, 'easy','peanut butter, jelly, bread', 'americas favorite snack'),
 ('Chorizo tacos','https://unsplash.com/photos/meQnwalVPyc','Lunch','Mexican', FALSE, 'moderate','Chorizo sausage link(casing removed and meat crumbled), chipole peppers, corn tortillas, chopped onions, chopped cilantro','These chorizo tacos use just 5 ingredients and taste amazing.'),
 ('Lumpia ','https://unsplash.com/photos/UkudQyyeovs','Snack', 'Filipino',  FALSE, 'moderate','vegetable oil, lumpia wrappers, ground pork, chopped onions, crushed garlic, minced carrots, chopped green onions, sliced cabbage, cilantro, salt, black pepper, garlic powder, soy sauce,','Lumpia are fried spring rolls that are found in Filipino and Indonesian cuisines'),
 ('Apple Strawberry Banana Smoothie','https://unsplash.com/photos/09v10GvEPr8', 'breakfast','N/A',  TRUE, 'easy','Almond Milk, Apple, Strawberry, Bananas, Greek Yogurt','Start your day off right with this quick and nutritious apple smoothie, ready in minutes. This breakfast smoothie has a nice combination of fruit and is slightly sweet, creamy, and satisfying.'),
