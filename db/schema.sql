@@ -18,7 +18,7 @@ calories NUMERIC,
 fat VARCHAR(50),
 carbohydrates VARCHAR(50),
 protein VARCHAR(50),
-sugar VARCHAR(50),
+sugar VARCHAR(50)
 
 );
 
