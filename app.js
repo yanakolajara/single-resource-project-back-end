@@ -12,6 +12,10 @@ app.use(express.json());
 app.use('/recipes', recipes);
 // app.use('/reviews', reviews);
 
+app.use('/recipes', recipes);
+app.use('/reviews', reviews);
+recipes.use('/:recipeId/reviews', reviews);
+
 app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
