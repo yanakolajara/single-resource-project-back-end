@@ -3,6 +3,7 @@ CREATE DATABASE recipes_dev;
 
 \c recipes_dev;
 
+DROP TABLE IF EXISTS recipes;
 
 CREATE TABLE recipes(
 id SERIAL PRIMARY KEY,

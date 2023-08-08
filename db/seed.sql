@@ -20,8 +20,9 @@ VALUES
 ('Pina Colada','https://images.unsplash.com/photo-1617728273800-1e615ab03037?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80', 'Beverage','Latin America',  TRUE, 'Easy','Pineapple Juice, Cream of Coconut, Light Rum, Ice','The pina colada is a blended drink that originated in Puerto Rico. The mixture of pineapple, coconut, and rum is a taste of the tropics.', 656, '7.1g', '1.6g', '85g', '84g'),
 ('Chocolate Croissants','https://images.unsplash.com/photo-1597528673850-e27492b0335f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80','Dessert','French',  FALSE, 'Challenging','Warm water, active dry yeast, Sugar, Bread Flour, Salt, Butter, Egg, Sea Salt','Also known as Pain au Chocolat this french pastry may take some time but, there’s absolutely nothing on earth better than a warm chocolate croissant that was proudly handmade in your own kitchen.', 297, '16g', '5.7g', '33g', '12g');
 
+
 INSERT INTO 
-    reviews (recipes_id, reviewer, title, content, rating )
+    reviews (recipe_id, reviewer, title, content, rating )
 VALUES
 ('1','George','Why is there a recipe for a peanut butter sandwich','Best sandwich ', 3),
 ('2','Suzette', 'Worlds Blandest Tacos','There tacos were a gross muddy mess, and a waste of good chorizo', 2 ),
