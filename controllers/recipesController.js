@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router()
+const reviewsController = require('./reviewsController')
 
+router.use('/:recipeId/reviews', reviewsController)
 
 
 const {
@@ -33,5 +35,6 @@ router.get('/:id', async(req,res) => {
         res.status(500).json({error: error});
     }
 })
+
 
 module.exports = router;
