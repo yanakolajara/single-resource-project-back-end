@@ -5,7 +5,8 @@ const {
     getAllReviews,
     getReviewsOfRecipe,
     createReview,
-    deleteReviewById
+    deleteReviewById,
+    updateReviewById
 } = require('../queries/reviews')
 
 
@@ -47,11 +48,20 @@ router.delete("/:id", async (req, res) => {
 
     const deletedReview = await deleteReviewById(id)
 
-    if(deletedReview.length===0){
+    if(deletedReview.length === 0){
         return res.status(404).json({error: "Review not found"})
 
     } else{
         return res.json(deletedReview)
+    }
+})
+router.put("/:id", async (req, res) => {
+    const updateReview = await updateReviewById(req.params.id, req.body);
+   
+    if(updateReview.length === 0){
+        return res.status(404).json({error: "Update Denied"})
+    } else{
+        return res.json(updateReview)
     }
 })
 

@@ -11,7 +11,10 @@ const getAllReviews = async() => {
 
 const getReviewsOfRecipe = async(recipeId) => {
     try {
-        const recipeReviews = await db.any('SELECT * FROM reviews WHERE recipe_id = $1',[recipeId]);
+        const recipeReviews = await db.any(
+        'SELECT * FROM reviews WHERE recipe_id = $1',
+        [recipeId]
+        );
         return recipeReviews
     } catch (error) {
         return error
@@ -46,10 +49,28 @@ const deleteReviewById = async (id) => {
     } catch (error) {
         return error
     }
+
 }
+
+const updateReviewById = async (id, review) => {
+    let { reviewer, title, content, rating } = review;
+    try {
+      const updatedReview = await db.any(
+        `UPDATE reviews SET reviewer = $1, title = $2, content = $3, rating = $4 WHERE id = $5 RETURNING *`,
+        [reviewer, title, content, rating, id]
+      );
+  
+      return updatedReview;
+    } catch (error) {
+      return error;
+    }
+  };
+
+ 
 module.exports = {
     getAllReviews,
     getReviewsOfRecipe,
     createReview,
-    deleteReviewById
+    deleteReviewById,
+    updateReviewById
 }
