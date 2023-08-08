@@ -36,8 +36,20 @@ const createReview = async (review) => {
     }
 }
 
+const deleteReviewById = async (id) => {
+    try {
+        const deleteReview = await db.any(
+            `DELETE FROM reviews WHERE id = $1 returning *`, 
+            id
+        );
+        return deleteReview
+    } catch (error) {
+        return error
+    }
+}
 module.exports = {
     getAllReviews,
     getReviewsOfRecipe,
-    createReview
+    createReview,
+    deleteReviewById
 }

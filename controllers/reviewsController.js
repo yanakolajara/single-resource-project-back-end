@@ -5,6 +5,7 @@ const {
     getAllReviews,
     getReviewsOfRecipe,
     createReview,
+    deleteReviewById
 } = require('../queries/reviews')
 
 
@@ -34,10 +35,24 @@ router.get('/get-reviews', async(req,res) => {
         res.status(500).json({error: error})
     }
 })
+
 router.post('/', async (req, res) => {
     const newReview = await createReview (req.body)
     console.log(newReview)
     res.json(newReview)
+})
+
+router.delete("/:id", async (req, res) => {
+    const { id } = req.params;
+
+    const deletedReview = await deleteReviewById(id)
+
+    if(deletedReview.length===0){
+        return res.status(404).json({error: "Review not found"})
+
+    } else{
+        return res.json(deletedReview)
+    }
 })
 
 module.exports = router;
