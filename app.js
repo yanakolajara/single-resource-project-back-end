@@ -4,17 +4,15 @@ const cors = require('cors');
 
 const app = express();
 const recipes = require('./controllers/recipesController');
-// const reviews = require('./controllers/reviewsController');
+const reviews = require('./controllers/reviewsController');
 
 app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 app.use('/recipes', recipes);
-// app.use('/reviews', reviews);
 
-app.use('/recipes', recipes);
 app.use('/reviews', reviews);
-recipes.use('/:recipeId/reviews', reviews);
+// recipes.use('/:recipeId/reviews', reviews);
 
 app.get('/', (req, res) => {
   res.send('Hello, world!');
