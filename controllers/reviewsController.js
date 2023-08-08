@@ -3,7 +3,8 @@ const router = express.Router({mergeParams: true})
 
 const {
     getAllReviews,
-    getReviewsOfRecipe
+    getReviewsOfRecipe,
+    createReview,
 } = require('../queries/reviews')
 
 
@@ -32,6 +33,11 @@ router.get('/get-reviews', async(req,res) => {
     } catch (error) {
         res.status(500).json({error: error})
     }
+})
+router.post('/', async (req, res) => {
+    const newReview = await createReview (req.body)
+    console.log(newReview)
+    res.json(newReview)
 })
 
 module.exports = router;

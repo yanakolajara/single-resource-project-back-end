@@ -18,7 +18,26 @@ const getReviewsOfRecipe = async(recipeId) => {
     }
 }
 
+const createReview = async (review) => {
+    try {
+       const newReview = await db.one(
+        `INSERT INTO reviews (recipe_id, reviewer, title, content, rating) VALUES ($1, $2, $3, $4, $5) RETURNING *`,
+        [
+            review.recipe_id,
+            review.reviewer,
+            review.title,
+            review.content,
+            review.rating,
+        ]
+       );
+       return newReview; 
+    } catch (error) {
+        return error
+    }
+}
+
 module.exports = {
     getAllReviews,
-    getReviewsOfRecipe
+    getReviewsOfRecipe,
+    createReview
 }
