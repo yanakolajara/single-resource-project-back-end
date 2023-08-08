@@ -31,7 +31,7 @@ CREATE TABLE reviews (
  content TEXT,
  rating NUMERIC,
  CHECK (rating >= 0 AND rating <= 5),
- recipes_id INTEGER REFERENCES recipes (id)
+ recipe_id INTEGER REFERENCES recipes (id)
  ON DELETE CASCADE
 );
 
