@@ -22,7 +22,7 @@ VALUES
 
 
 INSERT INTO 
-    reviews (recipes_id, reviewer, title, content, rating )
+    reviews (recipe_id, reviewer, title, content, rating )
 VALUES
 ('1','George','Why is there a recipe for a peanut butter sandwich','Best sandwich ', 3),
 ('2','Suzette', 'Worlds Blandest Tacos','There tacos were a gross muddy mess, and a waste of good chorizo', 2 ),
