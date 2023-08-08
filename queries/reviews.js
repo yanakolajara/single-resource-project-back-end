@@ -11,7 +11,7 @@ const getAllReviews = async() => {
 
 const getReviewsOfRecipe = async(recipeId) => {
     try {
-        const recipeReviews = await db.any('SELECT * FROM reviews WHERE recipes_id = $1',[recipeId]);
+        const recipeReviews = await db.any('SELECT * FROM reviews WHERE recipe_id = $1',[recipeId]);
         return recipeReviews
     } catch (error) {
         return error
