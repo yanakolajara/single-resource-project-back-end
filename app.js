@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express();
 const recipes = require('./controllers/recipesController')
-const reviews = require('./controllers/reviewsController')
+
 
 
 app.use(cors());
