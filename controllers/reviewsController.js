@@ -9,7 +9,7 @@ const {
     updateReviewById
 } = require('../queries/reviews')
 
-const { checkReviewer, checkTitle } = require("../validations/checkReview")
+const { checkReviewer, checkTitle, checkRating } = require("../validations/checkReview")
 
 router.get('/', async(req,res) => {
     try {
@@ -37,7 +37,7 @@ router.get('/get-reviews', async(req,res) => {
     }
 })
 
-router.post('/', checkReviewer, checkTitle, async (req, res) => {
+router.post('/', checkReviewer, checkTitle, checkRating, async (req, res) => {
     const newReview = await createReview (req.body)
     console.log(newReview)
     res.json(newReview)
@@ -55,7 +55,7 @@ router.delete("/:id", async (req, res) => {
         return res.json(deletedReview)
     }
 })
-router.put("/:id", checkReviewer, checkTitle, async (req, res) => {
+router.put("/:id", checkReviewer, checkTitle, checkRating, async (req, res) => {
     const updateReview = await updateReviewById(req.params.id, req.body);
    
     if(updateReview.length === 0){

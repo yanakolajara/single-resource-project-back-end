@@ -17,9 +17,19 @@ const checkTitle = (req, res, next) => {
     }
 }
 
+const checkRating = (req, res, next) => {
+    if(typeof req.body.rating !== "number"){
+        res.status(400).json({error: "Rating must have a numerical value"})
+    }else{
+        next()
+    }
+}
+
 
 
 module.exports = {checkReviewer,
                   checkTitle,
+                  checkRating
+                  
 }
  
