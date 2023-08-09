@@ -9,7 +9,17 @@ const checkReviewer = (req, res, next) => {
 
 };
 
+const checkTitle = (req, res, next) => {
+    if(!req.body.title){
+        res.status(400).json({error: "Review Must Have Title"})
+    }else{
+        next()
+    }
+}
 
 
-module.exports = {checkReviewer}
+
+module.exports = {checkReviewer,
+                  checkTitle,
+}
  
