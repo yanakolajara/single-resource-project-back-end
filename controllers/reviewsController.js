@@ -9,7 +9,7 @@ const {
     updateReviewById
 } = require('../queries/reviews')
 
-const { checkReviewer, checkTitle, checkRating } = require("../validations/checkReview")
+
 
 router.get('/', async(req,res) => {
     try {
@@ -17,7 +17,7 @@ router.get('/', async(req,res) => {
         if(allReviews[0]){
             res.json(allReviews)
         }else{
-            res.status(404).json({error: 'Server error'})
+            res.status(500).json({error: 'Server error'})
         }
     } catch (error) {
         res.status(500).json({error: error})
@@ -30,14 +30,14 @@ router.get('/get-reviews', async(req,res) => {
         if(recipeReviews[0]){
             res.json(recipeReviews)
         }else{
-            res.status(404).json({error: 'Reviews not found'})
+            res.status(500).json({error: 'Reviews not found'})
         }
     } catch (error) {
         res.status(500).json({error: error})
     }
 })
 
-router.post('/', checkReviewer, checkTitle, checkRating, async (req, res) => {
+router.post('/', async (req, res) => {
     const newReview = await createReview (req.body)
     console.log(newReview)
     res.json(newReview)
@@ -55,7 +55,7 @@ router.delete("/:id", async (req, res) => {
         return res.json(deletedReview)
     }
 })
-router.put("/:id", checkReviewer, checkTitle, checkRating, async (req, res) => {
+router.put("/:id", async (req, res) => {
     const updateReview = await updateReviewById(req.params.id, req.body);
    
     if(updateReview.length === 0){
